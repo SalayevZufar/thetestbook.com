@@ -1,0 +1,25 @@
+
+
+  
+{% for row in users %}  
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="tab-content p-0">
+            <div class="tab-pane fade active show" id="profile-followers">
+                <div class="list-group">
+                    <div class="list-group-item d-flex align-items-center">
+                        <img src="{{ url_for('static', filename='profile_images/' + row.image_file) }}" alt="" width="50px" class="rounded-sm ml-n2" />
+                        <div class="flex-fill pl-3 pr-3">
+                            <div><a href="{{ url_for('user', username=row.username)}}" class="text-dark font-weight-600">{{row.username}}</a></div>
+                            <div class="text-muted fs-13px">{{row.first_name}} {{row.last_name}}</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+{% endfor %} 

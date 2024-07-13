@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/style_main.css') }}"/>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/follow_btn.css') }}"/>
+<style>
+  
+</style>
+
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='images/logo_blue.png') }}" width="225" height="45" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            </li
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('chat')}}">Chat</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">My test</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('about')}}">About project</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<div class="container">
+
+<div class="img" style="    background-image:  url(/static/images/background.png );
+    height: 350px;background-size: cover;"></div>
+<div class="card social-prof">
+<div class="card-body">
+  
+  {% for f in follower %}
+  
+  {% if f == "True"  %}
+      <div class="cat action">
+        <label>
+          <input type="checkbox" id="input" value="1" onclick="sendData()" checked><span id="follow_text">Unfollow</span>
+        </label>
+      
+      </div>
+  {%elif f== None %}
+  <div class="cat action">
+    <label>
+      <input type="checkbox" id="input" value="1" onclick="sendData()" ><span id="follow_text">Follow</span>
+    </label>
+  
+  </div>
+  {% endif %}
+  {% endfor %}  
+  
+  
+  
+<div class="wrapper">
+<img src="{{ profile_img }}" alt class="user-profile">
+<h3>{{user.first_name}} {{user.last_name}} </h3>
+<p>@{{user.username}}</p>
+
+
+</div>
+<form action="" method="get">
+<div class="row ">
+<div class="col-lg-12">
+<ul class=" nav nav-tabs justify-content-center s-nav">
+  
+{% block navbar_timeline %}<li><a href="{{url_for('other_timeline', username=user.username)}}">Timeline</a></li>{% endblock %}
+{% block navbar_profile %}<li><a href="{{url_for('user', username= user.username)}}">About me</a></li>{% endblock %}
+<li><a href="#">Friends</a></li>
+<li><a href="#">Photos</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</form>
+<div class="row">
+    {% block profile %}
+    {% endblock %}
+    {% block timeline %}
+    {% endblock %}
+    {% block post %}
+    {% endblock %}
+</div>
+  
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/812e4a3b83.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{{url_for('static', filename='script/follow.js')}}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</html>

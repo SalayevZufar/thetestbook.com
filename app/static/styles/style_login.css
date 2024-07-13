@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face{
+    font-family: Klavika;
+    src: url(klavika-bold.otf);
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.head h2, h1{
+    display: inline-block;
+    font-family: Klavika;
+    text-align: center;
+  }
+  .head h2{
+    color: #1877f2;
+    font-size: 3rem;
+  }
+  .head h1{
+    color: #1877f2;
+    font-size: 4rem;
+  }
+  input[type='checkbox']{
+    height: 15px;
+    width:17px;
+  }
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding-top: 40px;
+    background: #f0f2f5;
+}
+
+.container {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    gap: 10px;
+}
+
+.login {
+    font-size: 1.5rem;
+    margin: 20px 0 10px 0;
+}
+
+input {
+    width: 85%;
+    height: 50px;
+    border: 2px solid rgba(0,0,0,.1);
+    border-radius: 6px;
+    font-size: 18px;
+    padding-left: 20px;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    outline-style: none;
+    
+}
+
+form input:focus {
+    outline: none;
+    border-color: #1877f2;
+  }
+
+.login_btn {
+    width: 90%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background: #1877f2;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    font-size: 14px;
+    margin: 10px;
+    color: #1877f2;
+}
+
+
+.button {
+    margin-top: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+.button a {
+    padding: 15px 20px;
+    background: #42b72a;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1.063rem;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+  
+.button a:hover {
+    background: #3ba626;
+}
+
+
+/* a:hover {
+    text-decoration: underline;
+} */
+
+.login-btn:hover {
+    background: #1366d1;
+}
+
+.new-account:hover {
+    background: #3ba327;
+}
+
+.style {
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.style::before {
+    content: " ";
+    display: block;
+    height: 0.9px;
+    width: 170px;
+    position:absolute;
+    top: 50%;
+    left: 25px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.style::after {
+    content: " ";
+    display: block;
+    height: 0.9px;
+    width: 170px;
+    position:absolute;
+    top: 50%;
+    right: 25px;
+    background-color: rgba(0, 0, 0, 0.2);
+}

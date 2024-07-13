@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style_signup.css') }}"/>
+    
+  </head>
+  <body>
+    <div class="container flex">
+      <div class="testbook-page flex">
+        <div class="text">
+          <div class="head">
+            <h2>the</h2>
+            <h1>testbook</h1>
+          </div>
+          <p>thetestbook is online classroom for students</p>
+          
+        </div>
+        
+        <form action="#" method="post">
+          {{ form.hidden_tag() }}
+            {{form.first_name(class="name_input")}}
+            
+            {{form.last_name(class="name_input")}}
+          {{form.username(class="input")}}
+          {% if form.username.errors %}
+          {% for error in form.username.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+          {% endif %}
+          {{form.email(class="input")}}
+          {% if form.email.errors %}
+          {% for error in form.email.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+          {% endif %}
+          {{form.password(class="input")}}
+          <div class="heading">
+            <p>Birthday</p>   
+          </div>
+          {{form.birthdate_day(class='selectbody')}}
+          {{form.birthdate_month(class='selectbody fl')}}
+          {{form.birthdate_year(class='selectbody fl')}}
+          <div class="heading">
+            <p>Gender</p>   
+          </div>
+            {{form.gender(class="selectbody")}}
+          <div class="heading">
+            <p>Sign up as</p>   
+          </div>
+          {{form.signup_as(class="selectbody")}}
+            
+          <div class="link">
+            {{form.submit(class='login')}}
+            
+          </div>
+          <hr>
+          <div class="button">
+            <a href="{{url_for('login')}}">Have an account?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

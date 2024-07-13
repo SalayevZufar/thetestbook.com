@@ -1,0 +1,54 @@
+
+  /* This is to be able to center the content in the middle of the page; */
+  
+  
+  
+  
+  .cat{
+    margin: 4px;
+    background-color: #16924e;
+    border-radius: 4px;
+    border: 1px solid #fff;
+    overflow: hidden;
+    float: left;
+  }
+  
+  .cat label {
+    float: left; line-height: 3.0em;
+    width: 5.0em; height: 2.0em;
+  }
+  
+  .cat label span {
+    text-align: center;
+    padding: 0px 0;
+    display: block;
+  }
+  
+  .cat label input {
+    position: absolute;
+    display: none;
+    color: #fff !important;
+  }
+  /* selects all of the text within the input element and changes the color of the text */
+  .cat label input + span{color: #fff;}
+  
+  
+  /* This will declare how a selected input will look giving generic properties */
+  .cat input:checked + span {
+      color: #ffffff;
+      text-shadow: 0 0  6px rgba(0, 0, 0, 0.8);
+  }
+  
+  
+  /*
+  This following statements selects each category individually that contains an input element that is a checkbox and is checked (or selected) and chabges the background color of the span element.
+  */
+  
+  .action input:checked + span{background-color: #e42727;}
+  .comedy input:checked + span{background-color: #1BB8F7;}
+  .crime input:checked + span{background-color: #D9D65D;}
+  .history input:checked + span{background-color: #82D44E;}
+  .reality input:checked + span{background-color: #F3A4CF;}
+  .news input:checked + span{background-color: #8C1B1B;}
+  .scifi input:checked + span{background-color: #AC9BD1;}
+  .sports input:checked + span{background-color: #214A09;}

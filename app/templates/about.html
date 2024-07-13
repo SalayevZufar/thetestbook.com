@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+
+body, html {height: 100%}
+.bgimg {
+  background-color: #c5e0ff;
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+h1 {
+  color: rgb(22, 55, 221);
+}
+p {
+  color:rgb(22, 55, 221);
+  font: bold;
+  
+}
+.w3-large .w3-center{
+  font-size: 70px;
+}
+.logo{
+  width: 500px;
+  height: 100px;
+  display: flex;
+  flex-shrink: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+b {
+  color: black;
+}
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='images/logo_blue.png') }}" width="225" height="45" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('profile')}}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Chat</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">My test</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link  active" href="#">About project</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  
+  <div class="w3-display-middle">
+    <img  class="logo" src="{{ url_for('static', filename='images/logo_about.png') }}" alt="" class="center">
+    <!-- <h1 class="w3-jumbo" style="font-size: 100px;">ABOUT PROJECT</h1> -->
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-medium w3-center"> Zufar Salaev <b>Founder & CEO</b></p>
+    <p class="w3-medium w3-center"> Bobur  Karimov <b>Co-Founder</b> </p>
+  </div>
+  
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>

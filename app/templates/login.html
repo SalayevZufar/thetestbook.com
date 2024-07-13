@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style_login.css') }}"/>
+    <title>Login</title>
+</head>
+<body>
+    <div class="main">
+        <div class="logo">
+            <div class="head">
+                <h2>the</h2>
+                <h1>testbook</h1>
+            </div>
+        </div>
+        <form action="#" method="post">
+        <div class="container">
+            {{ form.hidden_tag() }}
+                <span class="login">Login</span>
+                {{form.username()}}
+                {{form.password()}}
+                <p><span>Remember me</span> {{form.remember()}}</p>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for msg in messages %}
+                        
+                            <small>{{msg}}</small>
+
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %} 
+                <!-- <button type="submit"  class="button">Log in</button> -->
+                {{form.submit(class="login_btn")}}
+            <div class="style">
+                
+            </div>
+        </form>
+        <div class="button">
+            <a href="{{url_for('signup')}}">Create a new account</a>
+        </div>
+        </div>
+    </div>
+
+</body>
+</html>
