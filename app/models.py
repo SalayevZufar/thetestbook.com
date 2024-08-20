@@ -91,7 +91,7 @@ class Like(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey(
         'post.id', ondelete="CASCADE"), nullable=False)
 
-
+#This is Like model
 # class Like(db.Model):
 #     id = db.Column("id", db.Integer, primary_key=True)
 #     student_id = db.Column(db.Integer, db.ForeignKey('student.id'), nullable=False)
